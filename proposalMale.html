@@ -1,0 +1,46 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You?</title>
+    <style> 
+    </style>
+</head>
+<body>
+
+    <div class="container" id="box">
+        <h1 class="text">Will you be my Boyfriend....? 🤗😜</h1>
+        
+        <div class="hop">
+            <button id="yes" onclick="alert('😁i LIKE YOU TOO❤️ ')">
+                YES! 😚
+            </button>
+            <button id="runaway-btn">NO 😥</button>
+        </div>
+    </div>
+<link rel="stylesheet" href="proposal.css">
+    <script>
+        const btn = document.getElementById('runaway-btn');
+        const container = document.getElementById('box');
+
+        const moveButton = () => {
+            // Limits the movement to the size of the 400x300 container
+            const maxX = container.clientWidth - btn.offsetWidth;
+            const maxY = container.clientHeight - btn.offsetHeight;
+
+            // Generate coordinates within the invisible box
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+
+            btn.style.left = `${randomX}px`;
+            btn.style.top = `${randomY}px`;
+        };
+
+        // Button runs away on hover and click
+        btn.addEventListener('mouseover', moveButton);
+        btn.addEventListener('click', moveButton);
+    </script>
+      
+</body>
+</html>
